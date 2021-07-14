@@ -1,6 +1,11 @@
 <template>
     <div>
-        <Cards />
+        <Cards v-for="(card, index) in albums" :key="index"
+        :poster="card.poster"
+        :title="card.title"
+        :author="card.author"
+        :year="card.year"/>
+        
     </div>
 </template>
 
