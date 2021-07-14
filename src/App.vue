@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <Header />
-    <Main />
-    
+    <!-- Dentro il main mandiamo i dati -->
+    <Main :albums = "albums"/>
+
   </div>
 </template>
 
@@ -16,6 +17,18 @@ export default {
   components: {
     Header,
     Main,
+  },
+  data: function(){
+    return{
+      // album sarà la array vuota dove lavorare i dati
+      albums:[],
+    }
+  },
+  created() {
+    // Chiamata per ricevere i dati
+    axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((result)=>{
+      this.albums = result.data.response;
+    });
   }
 }
 </script>
