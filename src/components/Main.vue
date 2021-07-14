@@ -1,16 +1,11 @@
 <template>
-    <div class="bg-main">
-        <div class="container">
-            <div>
-                <Cards v-for="(card, index) in albums" :key="index"
-                :poster="card.poster"
-                :title="card.title"
-                :author="card.author"
-                :year="card.year"/>
-                
-            </div>
-
-        </div>
+    <div class="row">
+        <Cards v-for="(card, index) in albums" :key="index"
+        :poster="card.poster"
+        :title="card.title"
+        :author="card.author"
+        :year="card.year"/>
+            
 
     </div>
 </template>
@@ -34,5 +29,8 @@ export default {
 
 
 <style lang="scss" scoped>
+
+
+
 
 </style>

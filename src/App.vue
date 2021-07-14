@@ -1,8 +1,11 @@
 <template>
   <div id="app">
     <Header />
-    <!-- Dentro il main mandiamo i dati -->
-    <Main :albums = "albums"/>
+    <div class="container">
+      <!-- Dentro il main mandiamo i dati -->
+      <Main :albums = "albums"/>
+
+    </div>
 
   </div>
 </template>
@@ -36,5 +39,9 @@ export default {
 </script>
 
 <style lang="scss">
+
+  #app{
+    background:#1e2d3b;
+  }
 
 </style>
