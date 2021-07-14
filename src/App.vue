@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <div class="container">
+    <div class="container spazio-sotto">
       <!-- Dentro il main mandiamo i dati -->
       <Main :albums = "albums"/>
 
@@ -40,8 +40,12 @@ export default {
 
 <style lang="scss">
 
-  #app{
+  .spazio-sotto {
+    padding: 50px 0;
+  }
+  .bg{
     background:#1e2d3b;
   }
+
 
 </style>

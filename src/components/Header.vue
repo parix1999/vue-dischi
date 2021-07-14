@@ -22,7 +22,6 @@ export default {
     .bg-header {
         background-color: #2e3a46;
         padding:15px;
-        margin-bottom: 50px;
 
 
         .box-logo {

@@ -1,6 +1,7 @@
 <template>
     <div class="row">
-        <Cards v-for="(card, index) in albums" :key="index"
+        <Cards class="col-personal" 
+        v-for="(card, index) in albums" :key="index"
         :poster="card.poster"
         :title="card.title"
         :author="card.author"
@@ -30,7 +31,9 @@ export default {
 
 <style lang="scss" scoped>
 
-
+    .col-personal{
+        width: calc(100% / 5);
+    }
 
 
 </style>
