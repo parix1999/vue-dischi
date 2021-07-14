@@ -39,13 +39,11 @@ export default {
 </script>
 
 <style lang="scss">
-
+@import './style/app.scss';
   .spazio-sotto {
     padding: 50px 0;
   }
-  .bg{
-    background:#1e2d3b;
-  }
+  
 
 
 </style>
