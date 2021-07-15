@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Loading  v-if="albums.length == 0"/>
     <Header />
     <div class="container spazio-sotto">
       <!-- Dentro il main mandiamo i dati -->
@@ -15,6 +16,7 @@ import axios from 'axios'
 
 import Header from './components/Header.vue';
 import Main from './components/Main.vue';
+import Loading from './components/Loading.vue';
 
 
 export default {
@@ -22,6 +24,7 @@ export default {
   components: {
     Header,
     Main,
+    Loading,
   },
   data: function(){
     return{
