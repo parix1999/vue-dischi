@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <Loading  v-if="albums.length == 0"/>
-    <Header />
+
+    <Header @search="inputUtente"/>
+
     <div class="container spazio-sotto">
       <!-- Dentro il main mandiamo i dati -->
       <Main :albums = "albums"/>
@@ -37,6 +39,11 @@ export default {
     axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((result)=>{
       this.albums = result.data.response;
     });
+  },
+  methods: {
+    inputUtente(searchString) {
+      alert(searchString)
+    }
   }
 }
 </script>
