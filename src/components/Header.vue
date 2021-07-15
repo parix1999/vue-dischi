@@ -4,12 +4,31 @@
             <img src="../assets/spotify-logo.png" alt="logo-spotify">
         </div>
         <div class="interazione">
+    
             <input type="text" placeholder="prova"
             v-model="searchString">
             <button @click="$emit('search', searchString)">
                 Prova
             </button>
+
         </div>
+
+        <div class="selezione">
+            <label for="genere">Choose a genere:</label>
+
+            <select v-model="choice" name="genere" id="scelta">
+                <option >Rock</option>
+                <option >pop</option>
+                <option >metal</option>
+                <option >jazz</option>
+
+            </select>
+            <button @click="$emit('cerca', choice)">
+                Search
+            </button>
+        </div>
+
+
     </div>
 </template>
 
@@ -21,6 +40,7 @@ export default {
     data: function() {
         return {
             searchString:'',
+            choice: '',
         }
     }
 }
@@ -48,6 +68,11 @@ export default {
 
     .interazione {
         margin-left:20px;
+    }
+
+    .selezione {
+        margin-left:20px;
+        color:white;
     }
   
 

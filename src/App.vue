@@ -2,11 +2,12 @@
   <div id="app">
     <Loading  v-if="albums.length == 0"/>
 
-    <Header @search="inputUtente"/>
+    <Header @search="inputUtente"
+    @cerca="filtro"/>
 
     <div class="container spazio-sotto">
       <!-- Dentro il main mandiamo i dati -->
-      <Main :albums = "albums"/>
+      <Main :albums = "filteredAlbums"/>
 
     </div>
 
@@ -32,18 +33,27 @@ export default {
     return{
       // album sarà la array vuota dove lavorare i dati
       albums:[],
+      filteredAlbums: [],
     }
   },
   created() {
     // Chiamata per ricevere i dati
     axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((result)=>{
       this.albums = result.data.response;
+      this.filteredAlbums = result.data.response;
     });
   },
   methods: {
     inputUtente(searchString) {
       alert(searchString)
+    },
+    filtro(choice) {
+      this.filteredAlbums = this.albums.filter((element)=>{
+        element.genre.includes(choice);
+      });
     }
+
+
   }
 }
 </script>
